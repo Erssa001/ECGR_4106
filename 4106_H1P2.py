@@ -83,7 +83,8 @@ print(df_dtype.value_counts())
 
 # Scaling
 scaler = StandardScaler()
-X_data = torch.tensor(scaler.fit_transform(df_train_prepro.values_1H.copy()), dtype=torch.float32)
+X_data = torch.tensor(scaler.fit_transform(df_train_prepro_1H.values.copy()), dtype=torch.float32) # Use this line for 1 hot encoding
+# X_data = torch.tensor(scaler.fit_transform(df_train_prepro.values.copy()), dtype=torch.float32)
 Y_data = torch.tensor(df_train['SalePrice'].values.copy(), dtype=torch.float32)
 
 # Training/Test Split
