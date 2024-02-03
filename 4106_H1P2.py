@@ -138,7 +138,7 @@ def training_loop(n_epochs, optimizer, model, loss_fn, train_loader, test_loader
 
 
         if ((epoch == 1) or (epoch % 1 == 0)):
-            print(f"Epoch {epoch}, Training Loss: {train_loss/len(train_loader):.4f}, Validation Loss: {validation_loop(model=model, loss_fn=loss_fn, test_loader=test_loader)}")
+            print(f"Epoch {epoch}, Training Loss: {train_loss/len(train_loader):.4f}, {validation_loop(model=model, loss_fn=loss_fn, test_loader=test_loader)}")
 
 def validation_loop(model, loss_fn, test_loader):
     model.eval()
